@@ -1,0 +1,54 @@
+body {
+  background-color: #f2f3eb;
+  line-height: 1.4;
+  font: 400 16px 'Montserrat', sans-serif;
+  letter-spacing: 0.5px;
+}
+.decorate{
+  color: #9c0000;
+}
+.column {
+  flex: 25%;
+  max-width: 33.3%;
+  padding: 0 4px;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  filter: grayscale(1) brightness(0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.column img:hover {
+  filter: grayscale(0);
+}
+.toggleFullScreen {
+  position: absolute;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 97vh;
+  max-width: 68vw;
+  align-items: center;
+  display: block;
+  object-fit: cover;
+}
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .column img {
+    filter: grayscale(0) brightness(1);
+  }
+}
